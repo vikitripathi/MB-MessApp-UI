@@ -1,0 +1,7 @@
+<!-- When a state is activated, its templates are automatically inserted into the "ui-view" of its parent state's template.
+If it's a top-level state—which 'contacts' is because it has no parent state–then its parent template is index.html
+-->
+<h3>List of State 1 Items</h3>
+<ul>
+  <li ng-repeat="item in items">{{ item }}</li>
+</ul>

@@ -1,0 +1,21 @@
+<h3>List of State 2 Things</h3>
+<h5>{{title}}</h5>
+<ul>
+  <li ng-repeat="thing in things">{{ thing }}</li>
+</ul>
+
+<input type="text" ng-model="title">
+<select ng-model="selectedValue" ng-options="thing for thing in things"></select>
+{{selectedValue}}
+
+<h3>API Data :</h3>
+<ul ng-class="{'special': items.quantity>=3}">
+	<!-- <li ng-repeat="item in items">{{item.item_name}} : {{item.item_unit}} : {{item.quantity}} : {{item.balance}}</li> -->
+	<li><input type="text" ng-model="items.item_name"></li>
+	<li><input type="text" ng-model="items.item_unit"></li>
+	<li><input type="text" ng-model="items.quantity"></li>
+	<li><input type="text" ng-model="items.balance"></li>
+	<!-- <button ng-click="items.splice($index,1)" class="btn btn-danger"></button> -->
+</ul>
+<!-- {{items}} -->
+<button ng-click="save()" class="btn btn-primary">Save</button>
