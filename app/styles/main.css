@@ -1,6 +1,6 @@
 /* Space out content a bit */
 body {
-  padding-top: 20px;
+  padding-top: 0px;
   padding-bottom: 20px;
 }
 
@@ -59,6 +59,12 @@ body {
   margin-top: 28px;
 }
 
+#page-wrapper {
+  padding: 15px 15px;
+  min-height: 600px;
+  background: #F3F3F3;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
@@ -76,9 +82,67 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+  .navbar-side {
+  z-index: 1;
+  position: absolute;
+  width: 260px;
+  }
+  #page-wrapper {
+  margin: 0 0 0 260px;
+  padding: 15px 30px;
+  min-height: 1000px;
+ }
 }
-
 
 .special{
   color:red;
 }
+
+#sidebar-menu{
+  background-color: darkslateblue;
+}
+
+#main-menu a{
+  color: #F3F3F3;
+  text-decoration: none;
+  padding: 15px 10px;
+}
+#main-menu a:hover{
+  background-color: #F3F3F3;
+  color: darkslateblue;
+  text-decoration: none;
+  padding: 15px 10px;
+}
+#main-menu li.active a{
+  background-color: #F3F3F3;
+  color: darkslateblue;
+  text-decoration: none;
+  padding: 15px 10px;
+}
+
+.navbar-header,#main-menu li{
+  cursor: pointer;
+}
+
+
+.navbar-header {
+  z-index: 1;
+  position: absolute;
+  width: 260px;
+}
+
+#wrapper {
+  width: 100%;
+  background: darkslateblue;
+}
+
+#page-inner {
+  width: 100%;
+  margin: 10px 20px 10px 0px;
+  background-color: #fff!important;
+  padding: 10px;
+  min-height: 1200px;
+}
+
+
+
