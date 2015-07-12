@@ -47,7 +47,7 @@ angular
 		}
 			
 		service.editItem=function(item){
-			var finalUrl=baseUrl+_itemId;
+			var finalUrl=baseUrl+_itemId+"/";		//check for cors error!
 			var deferred = $q.defer();
 			var req={
                method:'PUT',

@@ -21,13 +21,16 @@ var app=angular.module('messUiApp', [    //dependency
     'ui.grid',
     'ui.grid.exporter',
     'ui.grid.pagination',
+    'ui.grid.edit',
+     'ui.grid.rowEdit',
+     'ui.grid.cellNav',
     'ngCookies'
   ]);
 
 app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider){ //dependency Injection & annotating
       //the annotating is helpful when in minimised version of javascript! as param converts to a , b  so to prevent that <- check 
       // For any unmatched url, redirect to /state1
-      $urlRouterProvider.otherwise('/aboutUs');
+      $urlRouterProvider.otherwise('/about_us');
       // Now set up the states
       // and routing
       $stateProvider
@@ -56,29 +59,12 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlR
           url:'/transactions',
           templateUrl:'views/transaction.html',
           controller:'transactionCtrl'
-        });
-        // .state('state1.list',{
-        //   //url will be state1/list as nested as state1.list (change to 'list' here and ui-sref and check !)
-        //   url: '/list',
-        //   templateUrl: 'views/state1.list.html',
-        //   controller: ['$scope',function($scope) {    //The controller will not be instantiated if template is not defined. 
-        //     $scope.items = ['A', 'List', 'Of', 'Items'];
-        //   }]
-        // })
-        // .state('state2', {
-        //   url: '/state2',
-        //   templateUrl: 'views/state2.html'
-        // })
-        // .state('state2.list', {
-        //   url: '/list',
-        //   templateUrl: 'views/state2.list.html',
-        //   controller:'state2Ctrl',
-        //   // resolve:{ //load before controller and template proceeds
-        //   //   items:['Items',function(Items){   //using Items services
-        //   //     return Items.get();
-        //   //   }]
-        //   // } 
-        // });
+        })
+        .state('editItems',{
+          url:'/edit_items',
+          templateUrl:'views/editItems.html',
+          controller:'editItemsCtrl'
+        });        
     }]);
 
 // app.constant('settings', {
