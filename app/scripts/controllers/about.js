@@ -8,7 +8,7 @@
  * Controller of the messUiApp
  */
 angular.module('messUiApp')
-  .controller('aboutCtrl',['$scope','$http','items',function($scope,$http,items) {  //add dependency , eg factory(items) to be added
+  .controller('aboutCtrl',['$scope','$http','$interval','time',function($scope,$http,$interval,time) {  //add dependency , eg factory(items) to be added
          // $scope.things = ['A', 'Set', 'fOf', 'Things'];
          // $scope.title  = 'State 2 List';
          // $scope.selectedValue='Set';
@@ -19,4 +19,16 @@ angular.module('messUiApp')
          //    //alert(JSON.stringify($scope.items));
                           
          // };
+         // time.currentTime();
+         
+         // time.getTime().success(function(response){
+         //    $scope.getDatetime =response;
+         // });
+         $scope.currentTime=function(){
+            $interval( function() {
+              $scope.getDatetime = new Date();
+              //console.log($scope.getDatetime);
+            }, 1);
+         }
+         $scope.currentTime();
     }]);
