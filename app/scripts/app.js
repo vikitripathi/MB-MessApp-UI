@@ -18,6 +18,9 @@ var app=angular.module('messUiApp', [    //dependency
     'ngSanitize',
     'ngTouch',
     // 'restangular',
+    'ui.grid',
+    'ui.grid.exporter',
+    'ui.grid.pagination',
     'ngCookies'
   ]);
 
@@ -48,6 +51,11 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlR
           url:'/about_us',
           templateUrl:'views/about.html',
           controller:'aboutCtrl'
+        })
+        .state('transactionDetails',{
+          url:'/transactions',
+          templateUrl:'views/transaction.html',
+          controller:'transactionCtrl'
         });
         // .state('state1.list',{
         //   //url will be state1/list as nested as state1.list (change to 'list' here and ui-sref and check !)

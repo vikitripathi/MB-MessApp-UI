@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-12">
-		<h3>Add Items :</h3>		
+		<h3><i class="fa fa-plus fa-1x"></i>&nbsp;Add Items :</h3>		
 	</div>
 </div>
 <hr>
@@ -16,7 +16,12 @@
 		  <div class="form-group">
 		    <label for="inputItemUnit" class="col-md-2 control-label">Unit :</label>
 		    <div class="col-md-4">
-		      <input type="text" class="form-control" id="inputItemUnit" placeholder="item unit">
+		    	<select id="inputItemUnit" class="form-control">
+		    		  <option value="kg" selected>Kilogram</option>
+					  <option value="litre">Litres</option>
+					  <option value="quintal">Quintals</option>
+					  <option value="unit" >Unit(std)</option>
+		    	</select>
 		    </div>
 		  </div>
 		  <div class="form-group">
@@ -28,12 +33,12 @@
 		  <div class="form-group">
 		    <label for="inputItemBalance" class="col-md-2 control-label">Balance :</label>
 		    <div class="col-md-4">
-		      <input type="text" class="form-control" id="inputItemBalance" placeholder="initial balance">
+		      <input type="text" class="form-control" id="inputItemBalance" placeholder="initial balance">		      
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <div class="col-md-offset-2 col-md-4">
-		      <button type="submit" class="btn btn-primary">Add New Item</button>
+		      <button type="submit" class="btn btn-primary">Add Item</button>
 		    </div>
 		  </div>
 		</form>

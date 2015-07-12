@@ -132,6 +132,7 @@ body {
 }
 
 #wrapper {
+  position: fixed;
   width: 100%;
   background: darkslateblue;
 }
@@ -141,8 +142,21 @@ body {
   margin: 10px 20px 10px 0px;
   background-color: #fff!important;
   padding: 10px;
-  min-height: 1200px;
+  min-height: 1200px;  
 }
+
+#page-inner .content{
+  height:800px;
+  overflow-y: scroll;
+  overflow-x:hidden;
+}
+
+.grid {
+    width: 100%;
+    
+}
+
+
 
 
 

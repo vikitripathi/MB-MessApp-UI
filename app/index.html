@@ -15,7 +15,8 @@
     <!-- endbuild -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">   
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />  
   </head>
   <body ng-app="messUiApp">
     <!--[if lt IE 7]>
@@ -25,13 +26,13 @@
     <!-- Add your site or application content here -->
 
     <div id="wrapper">
-         
+
       <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0;border-color: #6178B0;">
             <div class="navbar-header" >
-                <a class="navbar-brand" ui-sref="aboutUs">MB Mess</a> 
+                <a class="navbar-brand" ui-sref-active="aboutUs"><i class="fa fa-home"></i> &nbsp;MB Mess</a> 
             </div> 
             <div style="padding: 15px 50px 5px 50px;float: right;">
-              Admin Panel &nbsp;
+              <i class="fa fa-lock"></i>&nbsp;Admin Panel 
             </div>
       </nav>
 
@@ -90,24 +91,29 @@
     <!-- endbuild -->
 
     <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->    
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+    <script src="bower_components/pdfmake/build/pdfmake.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/state2.js"></script>
-        <script src="scripts/services/items.js"></script>
-        <script src="scripts/services/items.js"></script>
+        <script src="scripts/controllers/about.js"></script>        
+        <script src="scripts/services/items.js"></script>        
+        <script src="scripts/controllers/addItems.js"></script>
+        <script src="scripts/controllers/transaction.js"></script>
+        <script src="scripts/services/transactionsFactory.js"></script>
 
         <!-- endbuild -->
 </body>
