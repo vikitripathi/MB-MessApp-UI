@@ -6,34 +6,34 @@
 <hr>
 <div class="row">
 	<div class="col-md-12">
-		<form class="form-horizontal">
+		<form class="form-horizontal" ng-model="form" ng-submit="submit()">
 		  <div class="form-group">
 		    <label for="inputItemName" class="col-md-2 control-label">Item Name :</label>
 		    <div class="col-md-4">
-		      <input type="text" class="form-control" id="inputItemName" placeholder="item name">
+		      <input type="text" ng-model="form.item_name" class="form-control" id="inputItemName" placeholder="item name">
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <label for="inputItemUnit" class="col-md-2 control-label">Unit :</label>
 		    <div class="col-md-4">
-		    	<select id="inputItemUnit" class="form-control">
-		    		  <option value="kg" selected>Kilogram</option>
+		    	<select id="inputItemUnit" ng-model="form.item_unit" class="form-control" >
+		    		  <option value="kg">Kilogram</option>
 					  <option value="litre">Litres</option>
 					  <option value="quintal">Quintals</option>
-					  <option value="unit" >Unit(std)</option>
+					  <option value="std-unit" >Unit(std)</option>
 		    	</select>
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <label for="inputItemQuantity" class="col-md-2 control-label">Quantity :</label>
 		    <div class="col-md-4">
-		      <input type="text" class="form-control" id="inputItemQuantity" placeholder="intial quantity">
+		      <input type="number" ng-model="form.quantity" min="0" step="1" class="form-control" id="inputItemQuantity" placeholder="intial quantity">
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <label for="inputItemBalance" class="col-md-2 control-label">Balance :</label>
 		    <div class="col-md-4">
-		      <input type="text" class="form-control" id="inputItemBalance" placeholder="initial balance">		      
+		      <input type="number" ng-model="form.balance" class="form-control" id="inputItemBalance" placeholder="initial balance">		      
 		    </div>
 		  </div>
 		  <div class="form-group">
