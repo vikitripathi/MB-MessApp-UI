@@ -30,7 +30,7 @@ var app=angular.module('messUiApp', [    //dependency
 app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider){ //dependency Injection & annotating
       //the annotating is helpful when in minimised version of javascript! as param converts to a , b  so to prevent that <- check 
       // For any unmatched url, redirect to /state1
-      $urlRouterProvider.otherwise('/about_us');
+      $urlRouterProvider.otherwise('/login');
       // Now set up the states
       // and routing
       $stateProvider
@@ -45,6 +45,11 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlR
         //     }
         //   }
         // })
+        .state('login',{
+          url:'/login',
+          templateUrl:'views/login.html',
+          controller:'loginCtrl'
+        })
         .state('addItems',{
           url:'/add_items',
           templateUrl: 'views/addItems.html',
@@ -71,22 +76,22 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlR
 //   API_BASE_URL: 'http://localhost:8005/stock/',
 // });
 
-// app.config(['$httpProvider' ,'RestangularProvider', 'settings', function($httpProvider,RestangularProvider, settings){
-//   //cookieprovider
+app.config(['$httpProvider', function($httpProvider){
+  //cookieprovider
 
-//   //$httpProvider.defaults.useXDomain = true;
-//   //delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  //$httpProvider.defaults.useXDomain = true;
+  //delete $httpProvider.defaults.headers.common['X-Requested-With'];
   
-//   $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-//   $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+  $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+  $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
   
-//   RestangularProvider.setBaseUrl(settings.API_BASE_URL);
-//   RestangularProvider.setDefaultHttpFields({cache: false});
-//   RestangularProvider.setDefaultHeaders({'Content-Type': 'application/json'});
-//   // RestangularProvider.setDefaultHeaders({'Authorization': ''});
-//   //RestangularProvider.setDefaultHeaders({'X-CSRFToken': $cookies['csrftoken'] });
-//   RestangularProvider.setFullResponse(true);
-//   RestangularProvider.setDefaultRequestParams({format: 'json'});
+  // RestangularProvider.setBaseUrl(settings.API_BASE_URL);
+  // RestangularProvider.setDefaultHttpFields({cache: false});
+  // RestangularProvider.setDefaultHeaders({'Content-Type': 'application/json'});
+  // // RestangularProvider.setDefaultHeaders({'Authorization': ''});
+  // //RestangularProvider.setDefaultHeaders({'X-CSRFToken': $cookies['csrftoken'] });
+  // RestangularProvider.setFullResponse(true);
+  // RestangularProvider.setDefaultRequestParams({format: 'json'});
 
-// }]);
+}]);
 

@@ -1,0 +1,60 @@
+<div class="row">
+	<div class="col-md-12">
+		<h3><i class="fa fa-plus fa-1x"></i>&nbsp;Login :</h3>		
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-12">
+		<form class="form-horizontal" ng-model="form" ng-submit="temps.tryLogin()">
+		  <div class="form-group">
+		    <label for="inputUserName" class="col-md-2 control-label">User Name :</label>
+		    <div class="col-md-4">
+		      <input type="text" ng-model="temps.username" class="form-control" id="inputUserName" placeholder="item name">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputUserPassword" class="col-md-2 control-label">Password :</label>
+		    <div class="col-md-4">
+		      <input type="text" ng-model="temps.password" class="form-control" id="inputUserPassword" placeholder="item name">
+		    </div>
+		  </div>		  
+		  <div class="form-group">
+		    <div class="col-md-offset-2 col-md-4">
+		      <button type="submit" class="btn btn-primary">Login</button>
+		    </div>
+		  </div>
+		</form>
+	</div>
+</div>
+<!--
+<div class="small-4 small-centered columns">
+	<form>
+	  <fieldset>
+
+	    <div class="row collapse">
+			<div class="small-3 columns">
+				<span class="prefix">Username</span>
+			</div>
+			<div class="small-9 columns">
+				<input type="text" placeholder="Enter your username..." ng-model="temps.username">
+			</div>
+		</div>
+		<div class="row collapse">
+			<div class="small-3 columns">
+				<span class="prefix">Password</span>
+			</div>
+			<div class="small-9 columns">
+				<input type="password" placeholder="Enter your password..." ng-model="temps.password">
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns">
+				<input type="submit" class="button columns radius" value="Login" ng-click="temps.tryLogin()">
+			</div>
+			<div class="small-12 columns">{{temps.error}}</div>
+		</div>
+	  </fieldset>
+	</form>
+</div>
+-->

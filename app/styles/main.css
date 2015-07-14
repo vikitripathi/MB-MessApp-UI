@@ -156,6 +156,24 @@ body {
     
 }
 
+.credentials li{
+  cursor: pointer;
+}
 
+a{
+    font-weight: bolder;   
+    text-decoration: none;
+}
+
+.credentials li a:focus, a:hover {
+  color: #636466;
+  text-decoration: none;
+}
+.credentials li a{
+  font-weight: bolder;
+  color: #636466;
+  font-family: serif;
+  text-decoration: none;
+}
 
 

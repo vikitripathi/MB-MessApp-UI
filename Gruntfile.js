@@ -85,7 +85,7 @@ module.exports = function (grunt) {
             ];
           }
         }
-      },
+      },     
       test: {
         options: {
           port: 9001,
@@ -365,7 +365,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer',
-      'connect:livereload',
+      'connect:livereload',      
       'watch'
     ]);
   });

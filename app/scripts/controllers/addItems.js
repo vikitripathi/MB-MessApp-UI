@@ -23,7 +23,7 @@ angular
                 //         writable:true
                 //     }
                 // });
-                itemData["item_id"]=len+1;
+                itemData['item_id']=len+1;
                 for(var key in data){
                     itemData[key]=data[key];
                 }
@@ -33,6 +33,6 @@ angular
                     console.log(response);
                 });
             }); 
-         }
+         };
          // $scope.form.item_unit="kg";                                       
     }]);

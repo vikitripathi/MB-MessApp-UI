@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />  
   </head>
-  <body ng-app="messUiApp">
+  <body ng-app="messUiApp" ng-controller="mainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -30,7 +30,17 @@
       <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0;border-color: #6178B0;">
             <div class="navbar-header" >
                 <a class="navbar-brand" ui-sref-active="aboutUs"><i class="fa fa-home"></i> &nbsp;MB Mess</a> 
-            </div> 
+            </div>
+            <div class="col-md-2 credentials" style="float:right;">
+                        <ul>
+                            <li>
+                                <a ng-if="isUserAuthenticated">Welcome {{ username | uppercase }}</a>
+                            </li>
+                            <li>
+                                 <a ng-if="isUserAuthenticated" ng-click="logout()">Logout</a>
+                            </li>
+                        </ul>
+            </div>             
             <div style="padding: 15px 50px 5px 50px;float: right;">
               <i class="fa fa-lock"></i>&nbsp;Admin Panel 
             </div>
@@ -115,7 +125,9 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/services/main.js"></script>
         <script src="scripts/controllers/about.js"></script>        
         <script src="scripts/services/items.js"></script>        
         <script src="scripts/controllers/addItems.js"></script>

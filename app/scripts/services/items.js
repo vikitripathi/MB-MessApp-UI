@@ -34,7 +34,7 @@ angular
 
                // },
                data:item
-            }
+            };
             //$http.put('http://127.0.0.1:8005/stock/item/1/',$scope.items);
             $http(req)
 		            .success(function(data){
