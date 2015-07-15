@@ -2,8 +2,12 @@
 
 angular
    .module('messUiApp')   //no dependency as already defined
-    .controller('transactionCtrl',['$scope','$http','uiGridConstants','transactionsFactory',function($scope,$http,uiGridConstants,transactionsFactory) {  
-          
+    .controller('transactionCtrl',['$scope','$http','$state','main','uiGridConstants','transactionsFactory',function($scope,$http,$state,main,uiGridConstants,transactionsFactory) {  
+            
+        if(!main.getIsUserAuthenticated()){
+            $state.transitionTo('login');
+        }  
+
         //check use ?
          $scope.highlightFilteredHeader = function( row, rowRenderIndex, col, colRenderIndex ) {
             if( col.filters[0].term ){

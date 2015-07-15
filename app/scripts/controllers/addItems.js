@@ -2,7 +2,12 @@
 
 angular
    .module('messUiApp')   //no dependency as already defined
-    .controller('addItemsCtrl',['$scope','$http','items',function($scope,$http,items) {  
+    .controller('addItemsCtrl',['$scope','$http','items','main','$state',function($scope,$http,items,main,$state) {
+
+        if(!main.getIsUserAuthenticated()){
+            $state.transitionTo('login');
+        } 
+
          $scope.submit=function(){
             //console.log(JSON.stringify($scope.form));
             var data=JSON.parse(JSON.stringify($scope.form));   //convert to object

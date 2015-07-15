@@ -8,15 +8,19 @@
  * Controller of the messUiApp
  */
 angular.module('messUiApp')
-  .controller('mainCtrl',['$scope','$http','$state','main',function($scope,$http,$state,main) {  //add dependency , eg factory(items) to be added
+  .controller('mainCtrl',['$scope','$http','$state','main','jwtHelper',function($scope,$http,$state,main,jwtHelper) {  //add dependency , eg factory(items) to be added
          	//$scope= {};
       		$scope.isUserAuthenticated = main.getIsUserAuthenticated();
 
       		$scope.credentials=main.getCredentials();
-      		console.log($scope.credentials);
+      		console.log($scope.credentials);	
       		$scope.username=$scope.credentials.username;
       		$scope.password=$scope.credentials.password;
 
+      		if(!main.getIsUserAuthenticated()){
+	            $state.transitionTo('login');
+	        } 
+        
       		$scope.logout=function(){
       			main.resetAuthCredentials();
       			$state.transitionTo('login');

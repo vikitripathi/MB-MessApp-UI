@@ -52,18 +52,18 @@ angular.module('messUiApp')
                     console.log(success.token);
                     $scope.currentTime();
                     localStorage.token = 'JWT ' + success.token;
-                    localStorage.user='Time'+$scope.getDatetime;
+                    localStorage.user='Time'+$scope.getDatetime;        //check not working
                     localStorage.userDetails=username+'-'+password;
                     main.setIsUserAuthenticated(true);
                     //$scope.global.updateLoginStatus();
 
-                    if(main.getIsUserAuthenticated()){
-                      console.log("Authorization token recieved...");
-                      main.setCredentials(username,password);           //use service to set credentials to be used in other controller
-                      $http.defaults.headers.common['Authorization'] = localStorage.token;
-                      //Restangular.setDefaultHeaders({'Authorization': localStorage.token});
-                      $state.transitionTo('aboutUs');
-                    }
+                    //if(main.getIsUserAuthenticated()){
+                    console.log("Authorization token recieved...");
+                    main.setCredentials(username,password);           //use service to set credentials to be used in other controller
+                    $http.defaults.headers.common['Authorization'] = localStorage.token;
+                    //Restangular.setDefaultHeaders({'Authorization': localStorage.token});
+                    $state.transitionTo('aboutUs');
+                    //}
                 })
                 .error(function(error){
                     //deferred.reject('There was an error while adding the item');

@@ -2,8 +2,13 @@
 
 angular
    .module('messUiApp')   //no dependency as already defined
-    .controller('editItemsCtrl',['$scope','$http','$q','$interval','uiGridConstants','items',function($scope,$http,$q,$interval,uiGridConstants,items) {  
+    .controller('editItemsCtrl',['$scope','$http','$q','$interval','uiGridConstants','items','main','$state',function($scope,$http,$q,$interval,uiGridConstants,items,main,$state) {  
             
+
+        if(!main.getIsUserAuthenticated()){
+            $state.transitionTo('login');
+        } 
+
             //check use ?
          $scope.highlightFilteredHeader = function( row, rowRenderIndex, col, colRenderIndex ) {
             if( col.filters[0].term ){

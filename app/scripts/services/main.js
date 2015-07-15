@@ -4,7 +4,7 @@
 
 angular
 	.module('messUiApp')
-	.factory('main',['$q','$http','$state', function($q,$http,$state){	//injecting
+	.factory('main',['$q','$http','$state','jwtHelper' ,function($q,$http,$state,jwtHelper){	//injecting
 		var service={};		
 		var isUserAuthenticated=false;
 		var credentials={};
@@ -15,9 +15,54 @@ angular
 			isUserAuthenticated=val;
 		}
 
+		var verifyToken=function(data){
+			var baseUrl="http://127.0.0.1:8005/api-token-verify/";
+			var tokenData={
+				token:data
+			}
+			console.log("service main verify token");
+			console.log(token);
+			var req={
+	           method:'POST',
+	           url:baseUrl,
+	           headers:{
+	           	    'Content-Type': 'application/json'
+	           },
+	           data:tokenData
+	        };
+
+	      	$http(req)
+                .success(function(success){
+                    //the local storage token is valid
+                    console.log(success.token);
+                    isUserAuthenticated=true;
+                    $http.defaults.headers.common['Authorization'] = 'JWT ' + success.token;
+                    
+                })
+                .error(function(error){
+                    //the local storage token is invalid , so logout
+                    console.log(error.non_field_errors[0]);
+                    delete localStorage.token;
+				    delete localStorage.userDetails;
+				    delete localStorage.user;
+				    $http.defaults.headers.common['Authorization'] = '';	//use restangular
+				    isUserAuthenticated=false;                    
+                });
+
+		}
+
 		service.getIsUserAuthenticated=function(){
 			if(localStorage.token){
-				isUserAuthenticated=true;
+		        //verifyToken(localStorage.token);
+				//if localstorage has token and is valid
+				//verifyToken(localstorage.token);
+				var token=localStorage.token.split(" ")[1];
+				var bool = jwtHelper.isTokenExpired(token);
+				if(bool){//token is expired
+					isUserAuthenticated=false;
+				}else{
+					isUserAuthenticated=true;
+				}				
 			}		
 			return isUserAuthenticated;
 		}
@@ -42,21 +87,8 @@ angular
 		    delete localStorage.userDetails;
 		    delete localStorage.user;
 		    $http.defaults.headers.common['Authorization'] = '';	//use restangular
-		    service.setIsUserAuthenticated(false);
+		    isUserAuthenticated=false;								//service.setIsUserAuthenticated(false);
 		}		
-
-		// service.updateLoginStatus=function(){
-		// 	if(localStorage.token)
-		//       service.setIsUserAuthenticatedt(true);
-		//     else
-		//       service.setIsUserAuthenticatedt(false);
-		// }		
-
-		// service.logout=function(){
-		// 	service.resetAuthCredentials();
-		// 	//$state.transitionTo('login');
-		// 	//console.log("Logged out...");
-		// }
 
 		return service;
 	}]);

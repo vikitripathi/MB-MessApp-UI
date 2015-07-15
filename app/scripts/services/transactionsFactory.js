@@ -12,7 +12,7 @@ angular
 				
 		service.getItemsName=function(item_id){	//convert to use items factory made function
 			var itemUrl="http://127.0.0.1:8005/stock/item/";
-			var itemFinalUrl=itemUrl+item_id;
+			var itemFinalUrl=itemUrl+item_id+"/";
 			console.log(itemFinalUrl);		
 			return $http.get(itemFinalUrl).then(function(response){
 				// temp=response;
