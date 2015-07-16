@@ -8,6 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -68,6 +69,9 @@
                         <a ui-sref="transactionDetails"><i class="fa fa-table fa-2x"></i> Transactions Details </a>
                     </li>
                     <li ui-sref-active="active">
+                      <a ui-sref="dashboard"><i class="fa fa-tachometer fa-2x"></i> Dashboard</a>
+                    </li>
+                    <li ui-sref-active="active">
                       <a ui-sref="aboutUs"><i class="fa fa-info fa-2x"></i> About-Us</a>
                     </li>        
                 </ul>               
@@ -75,7 +79,7 @@
         </nav>
      
       <div id="page-wrapper">
-        <div id="page-inner" ui-view>            
+        <div id="page-inner" ui-view>     
         </div>
       </div>
 
@@ -121,6 +125,8 @@
     <script src="bower_components/restangular/dist/restangular.js"></script>
     <script src="bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
     <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="bower_components/Chart.js/Chart.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -129,7 +135,8 @@
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>        
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>        
         <script src="scripts/services/items.js"></script>        
         <script src="scripts/controllers/addItems.js"></script>
         <script src="scripts/controllers/transaction.js"></script>

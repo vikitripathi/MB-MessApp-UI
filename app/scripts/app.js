@@ -25,7 +25,8 @@ var app=angular.module('messUiApp', [    //dependency
      'ui.grid.rowEdit',
      'ui.grid.cellNav',
     'ngCookies',
-    'angular-jwt'
+    'angular-jwt',
+    'chart.js'
   ]);
 
 app.config(['$stateProvider','$urlRouterProvider','$httpProvider', 'jwtInterceptorProvider',function($stateProvider, $urlRouterProvider,$httpProvider, jwtInterceptorProvider){ //dependency Injection & annotating
@@ -78,6 +79,11 @@ app.config(['$stateProvider','$urlRouterProvider','$httpProvider', 'jwtIntercept
           url:'/edit_items',
           templateUrl:'views/editItems.html',
           controller:'editItemsCtrl'
+        })
+        .state('dashboard',{
+          url:'/dashboard',
+          templateUrl:'views/dashboard.html',
+          controller:'dashboardCtrl'
         });        
     }]);
 

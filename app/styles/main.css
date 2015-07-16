@@ -90,7 +90,7 @@ body {
   #page-wrapper {
   margin: 0 0 0 260px;
   padding: 15px 30px;
-  min-height: 1000px;
+  min-height: 700px;
  }
 }
 
@@ -142,11 +142,11 @@ body {
   margin: 10px 20px 10px 0px;
   background-color: #fff!important;
   padding: 10px;
-  min-height: 1200px;  
+  min-height: 600px;  
 }
 
 #page-inner .content{
-  height:800px;
+  height:600px;
   overflow-y: scroll;
   overflow-x:hidden;
 }

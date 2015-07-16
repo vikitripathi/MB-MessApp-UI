@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-md-8">
+		<h2><i class="fa fa-info fa-1x"></i> &nbsp;ReviewSystem Dashboard :</h2>		
+	</div>
+	<div class="col-md-4">
+		{{getDatetime | date:'medium'}}
+	</div>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-6" style="margin:0 auto">
+				<canvas id="bar" class="chart chart-bar" data="dataBar" labels="labelsBar">			
+				</canvas> 			
+	</div>
+	<div class="col-md-4">
+				<canvas id="doughnut" class="chart chart-doughnut" data="dataDoughnut"
+  				labels="labelsDoughnut"></canvas> 
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">		
+			<canvas id="line" class="chart chart-line" data="dataLine"
+				  labels="labelsLine" legend="true" series="seriesLine"
+				  click="onClick">
+		    </canvas> 
+	</div>	
+</div>
